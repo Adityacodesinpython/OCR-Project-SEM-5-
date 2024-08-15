@@ -30,11 +30,11 @@ def detect_text(path):
             "https://cloud.google.com/apis/design/errors".format(response.error.message)
         )
     # return texts[0].description
-    return ocr_texte
+    return ocr_text
 
 # @my_timer
 def main():
-    mypath = "../gcp-solution/mini-proj-assets/"
+    mypath = "mini-proj-assets/"
     only_files = [f for f in listdir(mypath) if isfile(join(mypath, f))]
     for image_path in only_files:
         text = detect_text(mypath+image_path)
