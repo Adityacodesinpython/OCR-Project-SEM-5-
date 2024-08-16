@@ -1,11 +1,3 @@
-"""
-need to install google-cloud-vision (GCP SDK) from conda -c conda-forge
-conda install -c conda-forge pillow=10.1.0 pandas=2.1.2 google-cloud-vision=3.4.5 scikit-learn=1.3.2 ipykernel jupyterlab notebook python=3.12.0
-to set up in jupyterlabs:
-python -m ipykernel install --user --name=gcp-cloud-vision
-repo: https://github.com/donaldsrepo/gcp-solution
-"""
-
 import os
 from os import listdir
 from os.path import isfile, join
@@ -39,7 +31,14 @@ def main():
     for image_path in only_files:
         text = detect_text(mypath+image_path)
         print(image_path)
-        print(text)
+        for i in text:
+            try:
+                float(i)
+                print(i, end="")
+            except ValueError:
+                pass
+            # print(i, end="")
+        print("\n")
 
 if __name__ == "__main__":
      main()
