@@ -24,7 +24,7 @@ def detect_text(path):
     # return texts[0].description
     return ocr_text
 
-# @my_timer
+# @my_timersssss
 def main():
     mypath = "mini-proj-assets/"
     only_files = [f for f in listdir(mypath) if isfile(join(mypath, f))]
