@@ -50,7 +50,7 @@ model = SimpleCNN()
 model_path = "C:/Users/ACER/.cache/kagglehub/models/longduykhu/ocr_pytorch_model/pyTorch/ocr/1/model.pt"
 state_dict = torch.load(model_path, weights_only=True)
 
-# Load the state_dict into the model
+# Loading  data sets
 model.load_state_dict(state_dict, strict=False)
 model.eval()
 
@@ -58,7 +58,7 @@ model.eval()
 
 
 
-# Define transformations
+# transformations
 transform = transforms.Compose([
     transforms.Resize((128, 128)),
     transforms.ToTensor(),
